@@ -82,7 +82,7 @@ configurations {
 
 artifactory {
   //contextUrl = 'http://repo.jfrog.org/artifactory'
-  contextUrl = 'http://localhost:8080/artifactory'
+  contextUrl = 'http://localhost:8081/artifactory'
   publish {
     repository {
       repoKey = 'gradle-snapshot-local' //The Artifactory repository key to publish to
@@ -98,8 +98,8 @@ artifactory {
     defaults {
       publishConfigs('archives', 'published')
       properties = ['build.status': "$it.project.status".toString()]
-      publishPom = false //Publish generated POM files to Artifactory (true by default)
-      publishIvy = false //Publish generated Ivy descriptor files to Artifactory (true by default)
+      //publishPom = false //Publish generated POM files to Artifactory (true by default)
+      //publishIvy = false //Publish generated Ivy descriptor files to Artifactory (true by default)
     }
   }
   resolve {
