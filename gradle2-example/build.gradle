@@ -14,7 +14,7 @@ buildscript {
 		jcenter()
 		mavenLocal()
             dependencies {
-                classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '3.1.0-SNAPSHOT')
+                classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '3.1.X-SNAPSHOT')
             }
          }
 }
