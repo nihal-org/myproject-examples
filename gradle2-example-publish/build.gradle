@@ -120,9 +120,11 @@ artifactory {
             repoKey = 'gradle-repo'
             username = 'admin'
             password = 'password'
+            /*
             ivy {
                 ivyLayout = '[organization]/[module]/ivy-[revision].xml'
             }
+            */
         }
         defaults {
             //publishIvy & publishPom are true by default
