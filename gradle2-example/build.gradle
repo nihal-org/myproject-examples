@@ -11,12 +11,8 @@
 
 buildscript {
             repositories {
-			maven{
-			url "http://repo.jfrog.org/artifactory/gradle"
-			//url "http://localhost:8081/artifactory/gradle"
-			//url "http://localhost:8080/artifactory/gradle-snapshot-local"
-			}
-			mavenLocal()
+		jcenter()
+		mavenLocal()
             dependencies {
                 classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '3.0.1')
             }
