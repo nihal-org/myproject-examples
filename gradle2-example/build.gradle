@@ -11,14 +11,10 @@
 
 buildscript {
             repositories {
-			maven{
-			url "http://repo.jfrog.org/artifactory/gradle"
-			//url "http://localhost:8081/artifactory/gradle"
-			//url "http://localhost:8080/artifactory/gradle-snapshot-local"
-			}
-			mavenLocal()
+		jcenter()
+		mavenLocal()
             dependencies {
-                classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '3.0.1')
+                classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '3.1.x-SNAPSHOT')
             }
          }
 }
@@ -86,10 +82,10 @@ configurations {
 
 artifactory {
   //contextUrl = 'http://repo.jfrog.org/artifactory'
-  contextUrl = 'http://localhost:8080/artifactory'
+  contextUrl = 'http://localhost:8081/artifactory'
   publish {
     repository {
-      repoKey = 'gradle-snapshot-local' //The Artifactory repository key to publish to
+      repoKey = 'gradle-repo' //The Artifactory repository key to publish to
       username = "${artifactory_user}" //The publisher user name
       password = "${artifactory_password}" //The publisher password
       ivy {
@@ -102,7 +98,7 @@ artifactory {
     defaults {
       publishConfigs('archives', 'published')
       properties = ['build.status': "$it.project.status".toString()]
-      publishPom = false //Publish generated POM files to Artifactory (true by default)
+      publishPom = true //Publish generated POM files to Artifactory (true by default)
       publishIvy = true //Publish generated Ivy descriptor files to Artifactory (true by default)
     }
   }
